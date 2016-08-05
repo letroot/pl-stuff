@@ -180,3 +180,8 @@
     thing, higher-order functions weren't commonplace like they are today, and many
     of the common programming idioms and that we take for granted just weren't
     around.
+
+##Rules
+ 1. You can only use `cond`, `zero?`, `null?`, `eq?`, `+`, `*`, `car`, `cdr`, `cons`, `-`, and things you've defined in previous problems
+ 2. Don't use letrec (or let, when you can avoid it)
+ 3. No `set!` or anything like that
