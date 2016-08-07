@@ -7,11 +7,17 @@
 ;;> (list-index-ofv? 'x '(y z x x))
 ;;2
 
-(define (counter count sym _list)
-	(cond ((null? _list) count)
-	      ((eqv? sym (car _list))
-	             (counter (+ 1 count) '() (cdr _list)))
-	      (else (counter count sym (cdr _list)))))
+(define list-index-ofv?
+	(lambda (sym _list)
+		(define (counter count sym _list)
+			(cond ((null? _list) (- 1))
+			      ((eqv? sym (car _list)) count)
+			      (else (counter (+ 1 count) sym (cdr _list)))))
+	(counter 0 sym _list)))
 
-(define (list-index-ofv? sym _list)
-	(counter 0 sym _list))
+;;Tests
+(list-index-ofv? 'z '(y z x x))
+;;1
+
+(list-index-ofv? '1 '(4 2 5 2 1 9))
+;;4
