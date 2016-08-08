@@ -9,12 +9,12 @@
 ;;(2 4 6)
 
 (define filter
-    (lambda (predicate _list)
-        (cond ((null? _list) '()) 
-              ((predicate (car _list))
-                    (cons (car _list) (filter predicate (cdr _list))))
-              (else 
-                    (filter predicate (cdr _list))))))
+  (lambda (predicate _list)
+    (cond 
+      [(null? _list) '()]
+      [(predicate (car _list)) 
+        (cons (car _list) (filter predicate (cdr _list)))]
+      [else (filter predicate (cdr _list))])))
   
   
 ;;Tests
