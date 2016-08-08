@@ -18,10 +18,10 @@
 
 ;;Incoming!!
 (define countdown
-    (lambda (n)
-        (cond
-            ((zero? n) '(0))
-            (else (cons n (countdown (- n 1)))))))
+  (lambda (n)
+    (cond
+      [(zero? n) '(0)]
+      [else (cons n (countdown (- n 1)))])))
 
 ;;Tests
 (countdown 6)
