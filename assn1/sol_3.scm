@@ -10,8 +10,8 @@
   (lambda (sym _list)
     (cond 
       [(null? _list) (list)]
-		  [(eqv? (car _list) sym) (remv-1st '() (cdr _list))]
-		  [else (cons (car _list) (remv-1st sym (cdr _list)))])))
+      [(eqv? (car _list) sym) (remv-1st '() (cdr _list))]
+      [else (cons (car _list) (remv-1st sym (cdr _list)))])))
 		     
 ;;Tests
 (remv-1st 'x '(x y r x y))
