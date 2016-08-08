@@ -17,6 +17,8 @@
 ;             (zipper (cdr list-1) (cdr list-2) (join-list new (list (cons (car list-1) (car list-2))))))))
 ;     (zipper list-1 list-2 '())))
 
+;; Tomorrow, play around with (cons (cons (car l1) (car l2)) (list (zip (cdr l1) (cdr l2))))
+
 ;;Tests
 (zip '(1 2 3) '(2 3 4))
 ;;((1 . 2) (2 . 3) (3 . 4))
