@@ -6,8 +6,8 @@
 ;;(x y z z x y y x y)
 
 (define (insertR sym-1 sym-2 l) 
-	(cond
-	  [(null? l) (list)]
+  (cond
+    [(null? l) (list)]
     [(eqv? sym-1 (car l)) 
       (cons sym-1 (insertR sym-1 sym-2 (cons sym-2 (cdr l))))]
     [else 
