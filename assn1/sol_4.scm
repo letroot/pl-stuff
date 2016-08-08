@@ -14,9 +14,10 @@
 ;;I wonder why this doesn't work for elements at index 0
 (define list-index-ofv?
   (lambda (sym _list)
-    (cond [(null? _list) nil] 
-          [(eqv? sym (car _list)) 0]
-          [else (+ 1 (list-index-ofv? sym (cdr _list)))])))
+    (cond 
+      [(null? _list) nil] 
+      [(eqv? sym (car _list)) 0]
+      [else (+ 1 (list-index-ofv? sym (cdr _list)))])))
 
 ;;Tests
 (list-index-ofv? 'z '(y z x x))
