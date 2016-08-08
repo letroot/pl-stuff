@@ -3,19 +3,19 @@
 ;;then drop the tail of the longer one.
 
 ;;I already defined join-list in the solution to problem 1 :D
-(define join-list
-  (lambda (list-1 list-2)
-    (cond ((null? list-1) list-2)
-          (else (cons (car list-1) (join-list (cdr list-1) list-2))))))
+; (define join-list
+;   (lambda (list-1 list-2)
+;     (cond ((null? list-1) list-2)
+;           (else (cons (car list-1) (join-list (cdr list-1) list-2))))))
 
-(define zip
-  (lambda (list-1 list-2)
-    (define zipper
-      (lambda (list-1 list-2 new)
-        (if (or (null? list-1) (null? list-2))
-            new
-            (zipper (cdr list-1) (cdr list-2) (join-list new (list (cons (car list-1) (car list-2))))))))
-    (zipper list-1 list-2 '())))
+; (define zip
+;   (lambda (list-1 list-2)
+;     (define zipper
+;       (lambda (list-1 list-2 new)
+;         (if (or (null? list-1) (null? list-2))
+;             new
+;             (zipper (cdr list-1) (cdr list-2) (join-list new (list (cons (car list-1) (car list-2))))))))
+;     (zipper list-1 list-2 '())))
 
 ;;Tests
 (zip '(1 2 3) '(2 3 4))
