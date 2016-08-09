@@ -4,8 +4,8 @@
 (define reverse
   (lambda (ls)
     (cond
-      ((null? ls) '())
-      (else (append (reverse (cdr ls)) (list (car ls)))))))
+      [(null? ls) '()]
+      [else (append (reverse (cdr ls)) (list (car ls)))])))
 
 
 ;;Tests
