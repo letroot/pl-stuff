@@ -6,12 +6,12 @@
 ;;then, if the predicate returns #t for that argument.
 
 (define filter
-  (lambda (predicate _list)
+  (lambda (predicate ls)
     (cond 
-      [(null? _list) '()]
-      [(predicate (car _list)) 
-        (cons (car _list) (filter predicate (cdr _list)))]
-      [else (filter predicate (cdr _list))])))
+      [(null? ls) '()]
+      [(predicate (car ls)) 
+        (cons (car ls) (filter predicate (cdr ls)))]
+      [else (filter predicate (cdr ls))])))
   
   
 ;;Tests

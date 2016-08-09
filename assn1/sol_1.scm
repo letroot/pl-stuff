@@ -11,5 +11,5 @@
 (countdown 6)
 ;;(6 5 4 3 2 0)
 
-(countdonwn 9)
+(countdown 9)
 ;;(9 8 7 6 5 4 3 2 1 0)

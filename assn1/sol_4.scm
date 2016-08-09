@@ -3,11 +3,11 @@
 ;;considered bad data.
 
 (define list-index-ofv?
-  (lambda (sym _list)
+  (lambda (sym ls)
     (cond 
-      [(null? _list) nil] 
-      [(eqv? sym (car _list)) 0]
-      [else (+ 1 (list-index-ofv? sym (cdr _list)))])))
+      [(null? ls) nil] 
+      [(eqv? sym (car ls)) 0]
+      [else (+ 1 (list-index-ofv? sym (cdr ls)))])))
 
 ;;Tests
 (list-index-ofv? 'z '(y z x x))

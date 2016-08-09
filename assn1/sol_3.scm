@@ -2,11 +2,11 @@
 ;;returns a new list with the first occurrence of the symbol removed.
 
 (define remv-1st
-  (lambda (sym _list)
+  (lambda (sym ls)
     (cond 
-      [(null? _list) (list)]
-      [(eqv? (car _list) sym) (cdr _list)]
-      [else (cons (car _list) (remv-1st sym (cdr _list)))])))
+      [(null? ls) (list)]
+      [(eqv? (car ls) sym) (cdr ls)]
+      [else (cons (car ls) (remv-1st sym (cdr ls)))])))
 		     
 ;;Tests
 (remv-1st 'x '(x y r x y))

@@ -3,10 +3,10 @@
 ;;then drop the tail of the longer one.
 
 (define zip
-  (lambda (list-1 list-2)
+  (lambda (ls-1 ls-2)
     (cond
-      [(or (null? list-1) (null? list-2)) '()]
-      [else (cons (cons (car list-1) (car list-2)) (zip (cdr list-1) (cdr list-2)))])))
+      [(or (null? ls-1) (null? ls-2)) '()]
+      [else (cons (cons (car ls-1) (car ls-2)) (zip (cdr ls-1) (cdr ls-2)))])))
 
 ;;Tests
 (zip '(1 2 3) '(2 3 4))
