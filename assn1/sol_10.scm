@@ -7,3 +7,10 @@
     (cond
       [(zero? n) 1]
       [else (* n (fact (- n 1)))])))
+
+;;Tests
+(fact 0)
+;;1
+
+(fact 3)
+;;6
