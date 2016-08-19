@@ -1,3 +1,4 @@
+;; insertR-fr
 (define insertR-fr
   (lambda (sym-1 sym-2 ls)
     (foldr
@@ -11,6 +12,8 @@
 (insertR-fr 'x 'x '(x))
 ;; (x x)
 
+
+;; filter-fr
 (define filter-fr 
    (lambda (pred ls) 
      (foldr 
@@ -22,6 +25,8 @@
 (filter-fr even? '(1 2 3 4 5))
 ;; (2 4)
 
+
+;; map-fr
 (define map-fr
   (lambda (f ls)
     (foldr
@@ -33,6 +38,8 @@
 (map-fr (lambda (x) (+ x 1)) '(1 2 3 4))
 ;; (2 3 4 5)
 
+
+;; append-fr
 (define append-fr
   (lambda (ls1 ls2)
     (foldr
@@ -42,6 +49,8 @@
 (append-fr '(1 2) '(3 4))
 ;; (1 2 3 4)
 
+
+;; reverse-fr
 (define reverse-fr
   (lambda (ls)
     (foldr
@@ -51,6 +60,8 @@
 (reverse-fr '(1 2 3 4))
 ;; (4 3 2 1)
 
+
+;; binary->natural-fr
 (define binary->natural-fr
   (lambda (ls)
     (foldr
@@ -61,3 +72,16 @@
 ;; Tests
 (binary->natural-fr '(0 0 1))
 ;; 4
+
+
+;; append-map-fr
+(define append-map-fr
+  (lambda (f ls)
+    (foldr
+      (lambda (x ls) (append (f x) ls))
+      '()
+      ls)))
+
+;; Tests
+(append-map-fr countdown '(1 2 3))
+;; ((1 0 2 1 0 3 2 1 0)
