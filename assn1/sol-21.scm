@@ -50,3 +50,14 @@
 ;;Tests
 (reverse-fr '(1 2 3 4))
 ;; (4 3 2 1)
+
+(define binary->natural-fr
+  (lambda (ls)
+    (foldr
+      (lambda (x ls) (+ x (* 2 ls)))
+      0
+      ls)))
+
+;; Tests
+(binary->natural-fr '(0 0 1))
+;; 4
