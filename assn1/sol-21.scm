@@ -1,3 +1,11 @@
+;; define foldr
+(define foldr
+  (lambda (f base ls)
+    (cond
+      [(null? ls) base]
+      [else (f (car ls) (foldr (f base (cdr ls))))])))
+  
+
 ;; insertR-fr
 (define insertR-fr
   (lambda (sym-1 sym-2 ls)
