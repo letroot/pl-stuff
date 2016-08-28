@@ -5,12 +5,14 @@
       [(null? ls) base]
       [else (f (car ls) (foldr (f base (cdr ls))))])))
 
-;;define member (helper procedure)
+
+;; define member (helper procedure)
 (define member?
   (lambda (a ls)
     (cond
       [(null? ls) #f]
       [else (or (eqv? a (car ls)) (member? a (cdr ls)))])))
+
 
 ;; insertR-fr
 (define insertR-fr
@@ -101,6 +103,7 @@
 ;; ((1 0 2 1 0 3 2 1 0)
 
 
+;; set-difference-fr
 (define set-difference-fr
   (lambda (set1 set2)
     (foldr
@@ -110,3 +113,24 @@
           [else (cons x ls)]))
       '()
       set1)))
+
+;;Tests
+(set-difference-fr '(1 2 3 4) '(2 4))
+;;(1 3)
+(set-difference-fr '(1 2 3) '(1 2 3))
+;;()
+
+
+;; cartesian-product-fr
+(define cartesian-product-fr
+  (lambda (set1 set2)
+    (foldr
+      (lambda (x ls)
+        (map (lambda (d)
+          (map (lambda (y) (cons d y)) set2)) set1))
+      '()
+      set1)))
+
+;;Tests
+(cartesian-product-fr '(1 2 3) '(a d g))
+;;(((1 . a) (1 . d) (1 . g)) ((2 . a) (2 . d) (2 . g)) ((3 . a) (3 . d) (3 . g)))
