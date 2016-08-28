@@ -4,7 +4,13 @@
     (cond
       [(null? ls) base]
       [else (f (car ls) (foldr (f base (cdr ls))))])))
-  
+
+;;define member (helper procedure)
+(define member?
+  (lambda (a ls)
+    (cond
+      [(null? ls) #f]
+      [else (or (eqv? a (car ls)) (member? a (cdr ls)))])))
 
 ;; insertR-fr
 (define insertR-fr
@@ -93,3 +99,14 @@
 ;; Tests
 (append-map-fr countdown '(1 2 3))
 ;; ((1 0 2 1 0 3 2 1 0)
+
+
+(define set-difference-fr
+  (lambda (set1 set2)
+    (foldr
+      (lambda (x ls)
+        (cond
+          [(member? x set2) ls]
+          [else (cons x ls)]))
+      '()
+      set1)))
