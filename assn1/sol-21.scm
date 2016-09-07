@@ -121,6 +121,15 @@
 ;;()
 
 
+;; powerset-fr
+(define powerset-fr
+  (lambda (set) 
+    (foldr
+      (lambda (x ls)
+        (append ls (map (lambda (subset) (cons x subset)) ls)))
+      '(())
+      set)))
+
 ;; cartesian-product-fr
 (define cartesian-product-fr
   (lambda (set1 set2)
